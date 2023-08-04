@@ -15,10 +15,6 @@ def expand_expression(expression):
         bracket_items = item.split('-')
         small_storage.append(bracket_items)
                        
-            
-
-    # for thing in small_storage:
-    #     print(thing)
 
     answer = f"{small_storage[0]} * {small_storage[1]} * {small_storage[2][0]} + {small_storage[0]} * {small_storage[1]} * {small_storage[2][1]}"
     answer = answer.replace('[','').replace(']','').replace("'","").replace("'","").replace('1','').replace('*','').replace(' ','').replace('nn','n^2')
