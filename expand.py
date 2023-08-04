@@ -21,7 +21,7 @@ def expand_expression(expression):
     #     print(thing)
 
     answer = f"{small_storage[0]} * {small_storage[1]} * {small_storage[2][0]} + {small_storage[0]} * {small_storage[1]} * {small_storage[2][1]}"
-    answer = answer.replace('[','').replace(']','').replace("'","").replace("'","").replace('1','')/replace('*','').replace(' ','').replace('nn','n^2')
+    answer = answer.replace('[','').replace(']','').replace("'","").replace("'","").replace('1','').replace('*','').replace(' ','').replace('nn','n^2')
     print(answer)
     return answer
 
