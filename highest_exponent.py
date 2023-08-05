@@ -11,7 +11,7 @@ def find_highest_term(runtime_func):
 
      # Iterate over each term and update the highest exponent if necessary
     for term in terms:
-         # Check if the term is a polynomial of the form an**b
+         # Check if the term is a polynomial of the form an^b
         if 'n' in term and '^' in term:
              # Split the term into its coefficient and exponent
             coeff, exponent = term.split('^')
