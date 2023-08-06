@@ -46,6 +46,17 @@ if num<= 1000000000:
             hunds = num_to_words.get(hunds)
             hunds_in_words = f"{hunds} {tens} {ones}"
             print(hunds_in_words)
+        elif 1001 < num < 10000:
+            ones = num%10
+            ones = num_to_words.get(ones)
+            tens = ((num//10) % 10) * 10
+            tens = num_to_words.get(tens)
+            hunds = ((num // 100) % 10) * 100
+            hunds = num_to_words.get(hunds)
+            thnds = (num // 1000) * 1000
+            thnds = num_to_words.get(thnds)
+            thnds_in_words = f"{thnds} {hunds} {tens} {ones}"
+            print(thnds_in_words)
 else:
     print(num)
 
