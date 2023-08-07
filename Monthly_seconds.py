@@ -1,3 +1,5 @@
+from Num_to_Words_func import num_to_words_func
+
 def secs_in_month(month):
     if month == "January":
         ans = 31*24*60*60
@@ -24,11 +26,15 @@ def secs_in_month(month):
     elif month == "December":
         ans = 31*24*60*60
 
-    return f"You have {ans} seconds in this month. Make each count :)"
+    return ans
+month = input("Please input a month: ")
+Seconds_in_Month = secs_in_month(month)
 
-Seconds_in_Jan = secs_in_month("January")
 
+print(f"You have {Seconds_in_Month}  seconds in {month} make each count.")
+ 
+        
+ 
 
-print(Seconds_in_Jan)
 
         
