@@ -36,70 +36,16 @@ d\n
 d.shape
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "d"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 26,
-   "id": "c3d3b069",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([[-5, -3, -1],\n",
-       "       [-2,  0,  2],\n",
-       "       [ 1,  3,  5],\n",
-       "       [ 4,  6,  8]])"
-      ]
-     },
-     "execution_count": 26,
-     "metadata": {},
-     "output_type": "execute_result"
-    }
-   ],
-   "source": [
-    "x + a"
-   ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": 27,
-   "id": "9ef3173d",
-   "metadata": {},
-   "outputs": [
-    {
-     "data": {
-      "text/plain": [
-       "array([[ 94,  95,  96],\n",
-       "       [ 97,  98,  99],\n",
-       "       [100, 101, 102],\n",
-       "       [103, 104, 105]])"
-      ]
-     },
-     "execution_count": 27,
-     "metadata": {},
-     "output_type": "execute_result"
-
-
-     
+ d 
+#array([[-5, -3, -1],
+#       [-2,  0,  2],
+#       [ 1,  3,  5],
+#       [ 4,  6,  8]])
+      x + a
+#array([[ 94,  95,  96],\n",
+#  [ 97,  98,  99],
+#  [100, 101, 102],
+#  [103, 104, 105]]) 
 
      
   x + b 
