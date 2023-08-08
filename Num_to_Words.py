@@ -1,8 +1,10 @@
+num = int(input("Enter a number: "))
+
 num_to_words={1 : 'one', 2 : 'two', 3 : 'three', 4 : 'four', 5 : 'five', 6 : 'six', 7 : 'seven',
 8 : 'eight', 9 : 'nine', 10 : 'ten', 11 : 'eleven', 12 : 'twelve', 13 : 'thirteen',
 14 : 'fourteen', 15 : 'fifteen',16 : 'sixteen', 17 : 'seventeen', 18 : 'eighteen',
 19 : 'nineteen', 20 : 'twenty', 30 : 'thirty', 40 : 'forty', 50 : 'fifty', 60 : 'sixty',
-70 : 'seventy', 80 : 'eighty', 90 : 'ninety', 100 : 'hundred', 200: 'two-hundred',
+70 : 'seventy', 80 : 'eighty', 90 : 'ninety', 100 : 'one-hundred', 200: 'two-hundred',
 300: 'three-hundred', 400: 'four-hundred', 500: 'five-hundred', 600: 'six-hundred', 
 700: 'seven-hundred', 800: 'eight-hundred', 900: 'nine-hundred', 1000: 'one-thousand',
 2000: 'two-thousand', 3000: 'three-thousand', 4000: 'four-thousand', 5000: 'five-thousand',
@@ -21,22 +23,24 @@ num_to_words={1 : 'one', 2 : 'two', 3 : 'three', 4 : 'four', 5 : 'five', 6 : 'si
 500000000: 'five hundred million', 600000000: 'six hundred million', 700000000: 'seven hundred million', 
 800000000: 'eight hundred million',900000000: 'nine hundred million', 1000000000: 'one billion'}
 
-num = int(input("Enter a number: "))
+
 
 if num<= 1000000000:
     if num in num_to_words:
         words = num_to_words.get(num)
-        print(words)
+        ans = words
     else:
         if 0 < num < 100:
+            # eg 12
             ones = num%10
             ones = num_to_words.get(ones)
             tens = num//10
             tens = tens * 10
             tens = num_to_words.get(tens)
             tens_in_words = f"{tens} {ones}"
-            print(tens_in_words)
+            ans = tens_in_words
         elif 101 < num < 1000:
+            # eg 123
             ones = num%10
             ones = num_to_words.get(ones)
             tens = ((num//10) % 10) * 10
@@ -44,9 +48,10 @@ if num<= 1000000000:
             hunds = num // 100
             hunds = hunds * 100
             hunds = num_to_words.get(hunds)
-            hunds_in_words = f"{hunds} {tens} {ones}"
-            print(hunds_in_words)
+            hunds_in_words = f"{hunds} and {tens} {ones}"
+            ans = hunds_in_words
         elif 1001 < num < 10000:
+            # eg 1234
             ones = num%10
             ones = num_to_words.get(ones)
             tens = ((num//10) % 10) * 10
@@ -55,8 +60,8 @@ if num<= 1000000000:
             hunds = num_to_words.get(hunds)
             thnds = (num // 1000) * 1000
             thnds = num_to_words.get(thnds)
-            thnds_in_words = f"{thnds} {hunds} {tens} {ones}"
-            print(thnds_in_words)
+            thnds_in_words = f"{thnds} {hunds} and {tens} {ones}"
+            ans = thnds_in_words
         elif 10001 < num < 100000:
             # eg 12345
             ones = num%10
@@ -78,18 +83,48 @@ if num<= 1000000000:
             if 10 < thnd_s < 20:
                 thnd_s = num_to_words.get(thnd_s)
                 thnd_s = f"{thnd_s} thousand"
-                tthds_in_words = f"{thnd_s} {hunds} {tens} {ones}"
+                tthds_in_words = f"{thnd_s} {hunds} and {tens} {ones}"
+                ans = tthds_in_words
             elif (20 < thnd_s < 30) or (30 < thnd_s < 40) or (40 < thnd_s < 50) or (50 < thnd_s < 60) or (60 < thnd_s < 70) or (70 < thnd_s < 80) or (80 < thnd_s < 90) or (90 < thnd_s < 100):
                 thnds_tens = (thnd_s // 10) * 10
                 thnds_tens = num_to_words.get(thnds_tens)
                 thnds_ones = thnd_s % 10
                 thnds_ones_s = num_to_words.get(thnds_ones)
                 thnds_dgt = f" {thnds_tens} {thnds_ones_s} thousand"
-                tthds_in_words = f"{thnds_dgt} {hunds} {tens} {ones}"
-             
+                tthds_in_words = f"{thnds_dgt} {hunds} and {tens} {ones}"
+                ans = tthds_in_words
+            
             else:
-                tthds_in_words = f"{tthds} {thnds} {hunds} {tens} {ones}"
-            print(tthds_in_words)
-else:
-    print(num)
+                tthds_in_words = f"{tthds} {thnds} {hunds} and {tens} {ones}"
+            ans = tthds_in_words
+        elif 100001 < num < 1000000:
+            # eg 123456
+            ones = num%10
+            ones = num_to_words.get(ones)
 
+            tens = ((num//10) % 10) * 10
+            tens = num_to_words.get(tens)
+
+            hunds = ((num // 100) % 10) * 100
+            hunds = num_to_words.get(hunds)
+
+            thnd_s = (num // 1000)
+            T_ones = thnd_s%10
+            T_ones = num_to_words.get(T_ones)
+
+            T_tens = ((thnd_s//10) % 10) * 10
+            T_tens = num_to_words.get(T_tens)
+
+            T_hunds = ((thnd_s // 100) % 10) * 100
+            T_hunds = num_to_words.get(T_hunds)
+
+            H_thnd_s = f"{T_hunds} and {T_tens} {T_ones} thousand"
+            H_thds_in_words = f"{H_thnd_s} {hunds} and {tens} {ones}"
+            ans = H_thds_in_words
+
+else:
+    ans = num
+
+    
+
+print(ans)
